@@ -1,0 +1,54 @@
+[![NPM Version](http://img.shields.io/npm/v/spawnly.svg?style=flat)](https://npmjs.org/package/spawnly)
+[![Build Status](http://img.shields.io/travis/royriojas/spawnly.svg?style=flat)](https://travis-ci.org/royriojas/spawnly)
+
+# spawnly
+> Wrapper around `child_process.spawn` to enable pass the command as a string directly to spawn
+
+## Install
+
+```bash
+npm i --save spawnly
+```
+
+## Usage
+
+```javascript
+var spawnly = require('spawnly');
+
+var cp = spawnly('echo "hello" && sleep 1s &&  echo "world"'); // this will happily accept commands that should run in sequence
+```
+
+**Other examples:**
+
+```javascript
+describe( 'spawnly', function () {
+  it( 'should execute a command in the system shell', function ( done ) {
+    var spawnly = require( '../' );
+    var cp = spawnly( 'echo "hello" && echo "world"' );
+
+    cp.stdout.on( 'data', function ( data ) {
+      expect( String( data ) ).to.equal( 'hello\nworld\n' );
+      done();
+    } );
+  } );
+
+  it( 'should execute a command in the system shell', function ( done ) {
+    var spawnly = require( '../' );
+    var cp = spawnly( 'echo "hello" && sleep 1s && echo "world"' );
+    var data = '';
+    cp.stdout.on( 'data', function ( received ) {
+      data += received;
+    } );
+
+    cp.on( 'exit', function () {
+      expect( data ).to.equal( 'hello\nworld\n' );
+      done();
+    } );
+  } );
+} );
+```
+## Lincense
+
+[MIT](./LICENSE)
+
+## [Changelog](./changelog.md)
