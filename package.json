@@ -1,6 +1,6 @@
 {
   "name": "spawnly",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Wrapper around `child_process.spawn` to enable pass the command as a string directly to spawn",
   "main": "index.js",
   "scripts": {
