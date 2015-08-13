@@ -15,8 +15,8 @@ function normalizeArgs( command, options ) {
     args = [ '/s', '/c', '"' + command + '"' ];
     opts.windowsVerbatimArguments = true;
   } else {
-    shell = '/bin/sh';
-    args = [ '-c', command ];
+    args = command.split( /\s+(?=(?:(?:[^']*'){2})*[^']*$)/ );
+    shell = args.shift();
   }
 
   return { cmd: command, shell: shell, args: args, options: opts };
