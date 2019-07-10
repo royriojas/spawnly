@@ -1,5 +1,10 @@
 
 # spawnly - Changelog
+## v1.0.3
+- **Build Scripts Changes**
+  - remove older node versions from travis.yml - [15021f0]( https://github.com/royriojas/spawnly/commit/15021f0 ), [Roy Riojas](https://github.com/Roy Riojas), 10/07/2019 05:56:12
+
+    
 ## v1.0.2
 - **Build Scripts Changes**
   - Upgrade prod dependencies - [59581df]( https://github.com/royriojas/spawnly/commit/59581df ), [Roy Riojas](https://github.com/Roy Riojas), 10/07/2019 05:52:23
