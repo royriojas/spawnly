@@ -41,8 +41,8 @@
     "npm run verify --silent"
   ],
   "dependencies": {
-    "extend": "^3.0.0",
-    "jq-trim": "^0.1.1"
+    "extend": "3.0.2",
+    "jq-trim": "0.1.2"
   },
   "devDependencies": {
     "changelogx": "^1.0.16",
